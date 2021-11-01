@@ -6,13 +6,13 @@
   "author": "Patrick Christensen <patrick@pat.gg>",
   "license": "MIT",
   "bin": {
-      "psqlvm": "./lib/cli.js"
+    "psqlvm": "./lib/cli.js"
   },
   "scripts": {
-      "start": "npx nodemon --ext ts -w ./src/**/*.ts --exec 'npx tsc'",
-      "build": "tsc -p .",
-      "local": "yarn global install && psqlvm",
-      "refresh": "rm -rf ./node_modules ./yarn.lock && yarn install"
+    "start": "npx nodemon --ext ts -w ./src/**/*.ts --exec 'npx tsc'",
+    "build": "tsc -p .",
+    "local": "yarn global install && psqlvm",
+    "refresh": "rm -rf ./node_modules ./yarn.lock && yarn install"
   },
   "dependencies": {
     "arg": "^5.0.1",
