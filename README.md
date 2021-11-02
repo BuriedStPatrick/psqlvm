@@ -6,6 +6,22 @@ It compiles the binaries from source and then places them inside ~/.psqlvm, whic
 
 Only tested on Ubuntu running inside of WSL.
 
+## Pre-requisites
+
+* NodeJS
+* NPM
+*  Yarn
+
+### Ubuntu
+
+You'll need the [following packages][1] to compile PostgreSQL binaries:
+
+```bash
+sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev libxml2-utils xsltproc
+```
+
+[1]: https://wiki.postgresql.org/wiki/Compile_and_Install_from_source_code
+
 ## Installation
 
 To install psqlvm, inside this repo, run:
