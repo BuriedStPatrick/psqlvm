@@ -11,6 +11,8 @@ Only tested on Ubuntu running inside of WSL.
 To install psqlvm, inside this repo, run:
 
 ```bash
+yarn install
+yarn build
 npm link
 ```
 
