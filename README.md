@@ -20,6 +20,12 @@ You'll need the [following packages][1] to compile PostgreSQL binaries:
 sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev libxml2-utils xsltproc
 ```
 
+You'll also need the following package to run PostgreSQL binaries:
+
+```bash
+sudo apt-get install libpq-dev
+```
+
 [1]: https://wiki.postgresql.org/wiki/Compile_and_Install_from_source_code
 
 ## Installation
