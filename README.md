@@ -4,7 +4,7 @@ psqlvm is a **very** basic PostgreSQL version manager of sorts. TL;DR: It's a ti
 
 It compiles the binaries from source and then places them inside ~/.psqlvm, which you should add to your PATH. This is essentially only for my personal use, there are probably better alternatives out there, but I needed something I could quickly debug.
 
-Only tested on Ubuntu running inside of WSL.
+Only tested on Ubuntu (+ WSL) and Arch Linux.
 
 ## Pre-requisites
 
@@ -24,6 +24,14 @@ You'll also need the following package to run PostgreSQL binaries:
 
 ```bash
 sudo apt-get install libpq-dev
+```
+
+### Arch Linux
+
+You'll need the following packages:
+
+```bash
+pacman -S base-devel libpqx
 ```
 
 [1]: https://wiki.postgresql.org/wiki/Compile_and_Install_from_source_code
