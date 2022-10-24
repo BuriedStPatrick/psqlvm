@@ -604,12 +604,12 @@ export const binaryDirs: BinaryDir[] = [
             'pgbench'
         ]
     },
-    {
-        name: 'pgevent',
-        binaries: [
-            'pgevent'
-        ]
-    },
+    // {
+    //     name: 'pgevent',
+    //     binaries: [
+    //         'pgevent'
+    //     ]
+    // },
     {
         name: 'scripts',
         binaries: [

@@ -1,15 +1,12 @@
 import execa from 'execa';
 import { Stream } from 'stream';
+import { baseInstallDir, downloadDir, getEditionInstallDir, homeDir } from './paths';
 import { copy } from './utils';
 
 const { http, https } = require('follow-redirects');
 const fs = require('fs');
 
 const baseUrl = `https://ftp.postgresql.org/pub/source`;
-
-const homeDir = process.env.HOME ?? process.env.USERPROFILE;
-const downloadDir = `${process.env.HOME ?? process.env.USERPROFILE}/Downloads`;
-const baseInstallDir = `${homeDir}/.local/bin/psqlvm`
 
 /**
 * Downloads file from remote HTTP[S] host and puts its contents to the
@@ -94,8 +91,6 @@ export async function installEditionBuildFiles(edition: string): Promise<void> {
     await copy(`${downloadDir}/postgresql-${edition}`, editionInstallDir);
 }
 
-export const getEditionInstallDir = (edition: string) => `${baseInstallDir}/${edition}`;
-
 export async function buildEdition(edition: string): Promise<void> {
     const editionInstallDir = getEditionInstallDir(edition);
 
@@ -121,3 +116,10 @@ export async function buildEdition(edition: string): Promise<void> {
     });
 }
 
+export async function removeEdition(edition: string): Promise<void> {
+    const editionInstallDir = getEditionInstallDir(edition);
+
+    await fs.promises.rm(editionInstallDir, {
+        recursive: true,
+        force: true });
+}
