@@ -33,7 +33,7 @@ sudo apt-get install libpq-dev
 You'll need the following packages:
 
 ```bash
-pacman -S base-devel libpqx
+pacman -S base-devel libpqxx
 ```
 
 [1]: https://wiki.postgresql.org/wiki/Compile_and_Install_from_source_code
