@@ -17,7 +17,7 @@ Only tested on Ubuntu (+ WSL) and Arch Linux.
 You'll need the [following packages][1] to compile PostgreSQL binaries:
 
 ```bash
-sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev libxml2-utils xsltproc
+sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev libxml2-utils xsltproc ccache
 ```
 
 > TODO: Some of these packages are no longer on Ubuntu but build seems to work regardless.
