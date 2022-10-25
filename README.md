@@ -80,6 +80,6 @@ psqlvm use <version>
 # Example: Use v14.0 binaries
 psqlvm use "14.0"
 
-# Example: Interactively pick a version to use. Will fail if the given version isn't actually installed. Someone should make it so that it only shows installed versions ;)
+# Example: Interactively pick an installed edition to use.
 psqlvm use
 ```
