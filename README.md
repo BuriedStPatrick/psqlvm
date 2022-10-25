@@ -2,7 +2,7 @@
 
 psqlvm is a **very** basic PostgreSQL version manager of sorts. TL;DR: It's a tiny CLI that wraps around downloading the source for various PostgreSQL client binaries. It's not rocket science.
 
-It compiles the binaries from source and then places them inside ~/.psqlvm, which you should add to your PATH. This is essentially only for my personal use, there are probably better alternatives out there, but I needed something I could quickly debug.
+It compiles the binaries from source and then places them inside `~/.local/bin/psqlvm`. This is essentially only for my personal use, there are probably better alternatives out there, but I needed something I could quickly debug.
 
 Only tested on Ubuntu (+ WSL) and Arch Linux.
 
@@ -19,6 +19,8 @@ You'll need the [following packages][1] to compile PostgreSQL binaries:
 ```bash
 sudo apt-get install build-essential libreadline-dev zlib1g-dev flex bison libxml2-dev libxslt-dev libssl-dev libxml2-utils xsltproc
 ```
+
+> TODO: Some of these packages are no longer on Ubuntu but build seems to work regardless.
 
 You'll also need the following package to run PostgreSQL binaries:
 
@@ -48,11 +50,10 @@ npm link
 
 This should give you access to `psqlvm`.
 
-Then add `$HOME/.psqlvm` to your PATH variable, as this is where the postgres binaries will be placed.
-I don't mess with no symlinks or anything like that. It literally just copies the binaries into the directory. Yes, it's that dumb:
+Then add `$HOME/.local/bin/psqlvm/current` to your `PATH` environment variable, as this is where the 'current' postgres binary symlinks are placed.
 
 ```bash
-export PATH=$HOME/.psqlvm:$PATH
+export PATH=$HOME/.local/bin/psqlvm/current:$PATH
 ```
 
 ## Usage
@@ -70,7 +71,7 @@ psqlvm install "14.0"
 psqlvm install
 ```
 
-After installing a version, it still won't be active until you've told psqlvm to actually use it (effectively copying the binaries into `~/.psqlvm` where your PATH, should pick them up). Do so:
+After installing a version, it still won't be active until you've told psqlvm to actually use it (effectively populating `~/.local/bin/psqlvm/current` with symlinks). Do so:
 
 ```bash
 # Format
